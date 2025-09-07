@@ -310,6 +310,12 @@ body {
         gap: 1rem;
     }
 
+    .work-image img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
     /* 実績詳細ページ */
     .work-detail-title {
         font-size: 2rem;
@@ -321,6 +327,12 @@ body {
 
     .work-visuals-grid {
         grid-template-columns: 1fr;
+    }
+
+    .work-visual-item img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 
     .work-navigation {
@@ -368,7 +380,13 @@ body {
     }
 
     .work-image {
-        height: 150px;
+        height: 200px;
+    }
+
+    .work-image img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 
     /* 実績詳細ページ */
@@ -382,6 +400,12 @@ body {
 
     .result-number {
         font-size: 1.5rem;
+    }
+
+    .work-visual-item img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 
 }
@@ -548,7 +572,7 @@ body {
 
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
 }
