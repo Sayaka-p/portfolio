@@ -1,0 +1,835 @@
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基本設定 */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a365d;
+    margin-bottom: 0.25rem;
+}
+
+.logo-subtitle {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 300;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin-left: 0.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #1a365d;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #1a365d;
+}
+
+/* メインビジュアル */
+.hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -84px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../images/main/main.png);
+    /* opacity: 0.1; */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 20%;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a365d;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ボタン */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: #1a365d;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2c5282;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #1a365d;
+    border-color: #1a365d;
+}
+
+.btn-secondary:hover {
+    background-color: #1a365d;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* 強みセクション */
+.strengths {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a365d;
+    margin-bottom: 3rem;
+}
+
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.strength-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.strength-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.strength-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.strength-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a365d;
+    margin-bottom: 1rem;
+}
+
+.strength-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* フッター */
+.footer {
+    background-color: #1a365d;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* レスポンシブデザイン */
+
+
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 0.1rem;
+        padding: 3% 0;
+    }
+    .nav-list {
+        gap: 4rem;
+    }
+
+    .hero {
+        padding: 100px 0 60px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 200px;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-top: 12%;
+    }
+
+    .strengths-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .strength-card {
+        padding: 1.5rem;
+    }
+
+    /* プロフィールページ */
+    .profile-skills {
+        grid-template-columns: 1fr;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    /* 実績一覧ページ */
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-meta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* 実績詳細ページ */
+    .work-detail-title {
+        font-size: 2rem;
+    }
+
+    .work-results {
+        grid-template-columns: 1fr;
+    }
+
+    .work-visuals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .pc { display: none !important; }
+    .sp { display: block !important; }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.7rem;
+        gap: 3rem;
+    }
+
+    /* プロフィールページ */
+    .profile-item {
+        padding: 1.5rem;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 実績一覧ページ */
+    .work-card {
+        margin-bottom: 1rem;
+    }
+
+    .work-image {
+        height: 150px;
+    }
+
+    /* 実績詳細ページ */
+    .work-detail-title {
+        font-size: 1.75rem;
+    }
+
+    .work-overview-item {
+        padding: 1.5rem;
+    }
+
+    .result-number {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* プロフィールページ */
+.profile-section {
+    padding: 120px 0 80px;
+    background-color: #fff;
+}
+
+.profile-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1a365d;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.profile-item {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #1a365d;
+}
+
+.profile-item-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a365d;
+    margin-bottom: 1rem;
+}
+
+.profile-item-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.profile-item-content p:last-child {
+    margin-bottom: 0;
+}
+
+.profile-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-category {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.skill-category h5 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+}
+
+.skill-category p {
+    color: #666;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.tool-item:hover {
+    transform: translateY(-2px);
+}
+
+.tool-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.tool-item span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #1a365d;
+    text-align: center;
+}
+
+/* アニメーション */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.strength-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.strength-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.strength-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.profile-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.profile-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.profile-item:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* 実績一覧ページ */
+.works-section {
+    padding: 120px 0 80px;
+    background-color: #fff;
+}
+
+.works-description {
+    text-align: center;
+    color: #666;
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.work-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.work-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.work-card:hover .work-image img {
+    transform: scale(1.05);
+}
+
+.work-content {
+    padding: 1.5rem;
+}
+
+.work-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+}
+
+.work-category {
+    display: inline-block;
+    background-color: #e2e8f0;
+    color: #1a365d;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.work-description {
+    color: #666;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.work-link {
+    display: inline-block;
+    color: #1a365d;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.work-link:hover {
+    border-bottom-color: #1a365d;
+}
+
+.works-pagination {
+    text-align: center;
+}
+
+.work-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.work-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.work-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.work-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.work-card:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.work-card:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+/* 実績詳細ページ */
+.work-detail-section {
+    padding: 152px 0 80px;
+    background-color: #fff;
+}
+
+.work-detail-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.work-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.work-detail-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a365d;
+    margin-bottom: 1rem;
+}
+
+.work-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.work-category-detail {
+    background-color: #1a365d;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.work-period,
+.work-scope {
+    color: #666;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+}
+
+.work-overview {
+    margin-bottom: 3rem;
+}
+
+.work-overview-item {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #1a365d;
+}
+
+.work-overview-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a365d;
+    margin-bottom: 1rem;
+}
+
+.work-overview-content {
+    color: #666;
+    line-height: 1.6;
+}
+
+.work-overview-list {
+    color: #666;
+    line-height: 1.6;
+    padding-left: 1.5rem;
+}
+
+.work-overview-list li {
+    margin-bottom: 0.5rem;
+}
+
+.work-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.result-item {
+    text-align: center;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.result-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+}
+
+.result-label {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.work-visuals {
+    margin-bottom: 3rem;
+}
+
+.work-visuals-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a365d;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.work-visuals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.work-visual-item {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.work-visual-item:hover {
+    transform: translateY(-2px);
+}
+
+.work-visual-item img {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+}
+
+.work-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.work-overview-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.work-overview-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.work-overview-item:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.work-visual-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.work-visual-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.work-visual-item:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
