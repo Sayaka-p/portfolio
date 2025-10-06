@@ -632,6 +632,7 @@ body {
 
 .work-card {
     animation: fadeInUp 0.6s ease-out;
+    width: 83%;
 }
 
 .work-card:nth-child(2) {
@@ -823,6 +824,7 @@ body {
 
 .work-visual-item {
     animation: fadeInUp 0.6s ease-out;
+    width: 89%;
 }
 
 .work-visual-item:nth-child(2) {
